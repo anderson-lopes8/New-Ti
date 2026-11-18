@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "Lembrete_UC",
+    "slug": "lembrete-uc",
+    "scheme": "lembrete-uc",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": ["android"],
+    "android": { "package": "com.lembrete.uc" },
+    "plugins": ["expo-router"]
+  }
+}
