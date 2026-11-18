@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thundercats - Escolha seu Guerreiro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="fundo-capa" id="tela-fundo"></div>
+
+    <main class="container">
+        <section id="tela-selecao" class="tela-ativa">
+            <h1 class="titulo-principal">Thundercats </h1>
+            <div class="cards-selecao">
+                <button class="btn-personagem" onclick="mostrarPersonagem('lion-o')">
+                    <span>Lion-O</span>
+                </button>
+
+                <button class="btn-personagem" onclick="mostrarPersonagem('cheetara')">
+                    <span>Cheetara</span>
+                </button>
+
+                <button class="btn-personagem" onclick="mostrarPersonagem('panthro')">
+                    <span>Panthro</span>
+                </button>
+
+                <button class="btn-personagem" onclick="mostrarPersonagem('mumm-ra')">
+                    <span>Mumm-Ra</span>
+                </button>
+
+                <button class="btn-personagem" onclick="mostrarPersonagem('Simiano')">
+                    <span>Simiano</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="tela-personagem" class="tela-oculta">
+            <div class="card-detalhes">
+                <div class="img-area">
+                    <img id="img-personagem" src="" alt="Personagem">
+                </div>
+                <div class="info-area">
+                    <h2 id="nome-personagem">Nome</h2>
+                    <p id="desc-personagem">Descrição</p>
+                    <div class="stats">
+                        <span id="arma-personagem">Arma: </span>
+                    </div>
+                    <button class="btn-voltar" onclick="voltar()">Voltar à Seleção</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

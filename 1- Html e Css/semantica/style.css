@@ -1,0 +1,85 @@
+/* Estilo padrão para telas maiores (1200px+) */
+body {
+    background-color: blue;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    transition: background-color 0.5s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 15px;
+    text-align: left;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/* Telas de 1200px ou menos (Desktops pequenos) */
+@media (max-width: 1200px) {
+    body {
+        background-color: rgb(25, 192, 38); /* Azul claro */
+    }
+}
+
+/* Telas de 992px ou menos (Notebooks / Tablets em Paisagem) */
+@media (max-width: 992px) {
+    body {
+        background-color: yellow;
+    }
+}
+
+/* Telas de 768px ou menos (Tablets / Mobile Grande) */
+@media (max-width: 768px) {
+    body {
+        background-color: orange;
+    }
+    
+    /* Mudar a direção do Flexbox para coluna */
+    nav {
+        flex-direction: column;
+        align-items: left ; /* Centraliza os links */
+    }
+    
+    nav a {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #555;
+    }
+}
+
+/* Telas de 600px ou menos (Mobile) */
+@media (max-width: 600px) {
+    body {
+        background-color: red;
+    }
+}
+
+/* Telas de 200px ou menos (Mobile) */
+@media (max-width: 200px) {
+    body {
+        background-color: red;
+    }
+
+    h1 {
+    font-size: 1em;
+}
+
+p {
+    font-size: 0.6em;
+}
+}

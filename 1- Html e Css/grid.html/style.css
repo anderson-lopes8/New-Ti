@@ -1,0 +1,17 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    /* comenta*/
+    grid-template-rows: auto 1fr auto;
+}
+
+.header {
+    grid-column: 1 / 3;
+    /* ocupa as 2 */
+}
+
+div {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+}

@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fundo-capa {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* IMAGEM DE FUNDO */
+    background-image: url("img/fundo-thundercats.jpg");
+    background-size: cover;
+    background-position: container;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    text-align: center;
+}
+
+.titulo-principal {
+    font-family: 'Bangers', cursive;
+    font-size: 4rem;
+    color: #ffcc00;
+    text-shadow: 4px 4px 0px #b30000;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.cards-selecao {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-personagem {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ffcc00;
+    background-color: #333;
+    color: #ffcc00;
+    font-family: 'Bangers', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-personagem:hover {
+    transform: scale(1.1);
+    background-color: #b30000;
+    color: white;
+    box-shadow: 0 0 20px #ffcc00;
+}
+
+.tela-ativa {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.tela-oculta {
+    display: none;
+}
+
+.card-detalhes {
+    background: rgba(0, 0, 0, 0.85);
+    border: 3px solid #ffcc00;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.3);
+}
+
+.img-area img {
+    width: 300px;
+    height: 440px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.info-area {
+    text-align: left;
+}
+
+.info-area h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 3rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.info-area p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.info-area .stats {
+    color: #ccc;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn-voltar {
+    padding: 10px 20px;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-voltar:hover {
+    background-color: #ff0000;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-detalhes {
+        flex-direction: column;
+    }
+
+    .titulo-principal {
+        font-size: 2.5rem;
+    }
+}

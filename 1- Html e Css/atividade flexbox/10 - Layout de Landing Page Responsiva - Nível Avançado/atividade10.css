@@ -1,0 +1,180 @@
+/*
+    Instruções do CSS:
+
+    Passo 1: Header Responsivo
+    - Transforme o header em um contêiner flexível.
+    - Defina que o elemento 'nav' cresça para ocupar todo o espaço restante.
+    - Alinhe os links de navegação para a direita.
+    - Em telas pequenas (max-width: 600px), mude a direção do header para coluna.
+
+    Passo 2: Seção de Serviços
+    - O contêiner '.service-container' deve ser um contêiner flexível.
+    - Faça com que os cartões de serviço (`.service-card`) cresçam para preencher o espaço de forma igual.
+    - Permita a quebra de linha.
+
+    Passo 3: Seção de Destaque
+    - Transforme a seção '.highlight' em um contêiner flexível.
+    - Defina a ordem padrão dos itens (texto antes da imagem).
+    - Em telas maiores (min-width: 768px), use a propriedade `order` para inverter a ordem, fazendo a imagem 
+    aparecer primeiro.
+
+    Passo 4: Rodapé Completo
+    - Transforme o contêiner '.footer-columns' em um contêiner flexível.
+    - Alinhe a coluna `.copyright` para o centro.
+    - Alinhe o resto dos itens com um bom espaçamento.
+*/
+
+/* Estilos Gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f0f4f8;
+    line-height: 1.6;
+}
+
+/* Passo 1: Header Responsivo */
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    /* Seu código Flexbox para o header aqui */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se não houver espaço */
+}
+
+header nav {
+    display: flex; /* Alinha os links da navegação */
+    flex-grow: 1; /* Faz a navegação crescer */
+    justify-content: flex-end; /* Alinha os links à direita */
+}
+
+header nav a {
+    margin-left: 20px;
+}
+
+/* Passo 2: Seção de Serviços */
+.services {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.service-container {
+    padding: 20px 0;    
+    /* Seu código para o contêiner de serviços aqui */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);    
+    /* Seu código para os cartões de serviço aqui */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;flex: 1;
+}
+
+/* Passo 3: Seção de Destaque */
+.highlight {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 20px;
+    /* Seu código para a seção de destaque aqui */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highlight .image-box img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.highlight .text-content {
+    padding: 20px 0;
+    /* Definindo flex para o conteúdo de texto para alinhamento em telas maiores */
+    flex: 1;
+}
+
+.highlight a {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.highlight .image-box {
+    flex: 1;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+    header {
+        /* Mude a direção para telas pequenas */
+        flex-direction: column;
+        align-items: center; /* Centraliza os itens quando em coluna */
+    }
+
+    header nav {
+        justify-content: center; /* Centraliza os links no mobile */
+        padding-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .highlight {
+        /* Use order para inverter a ordem em telas maiores */
+        flex-direction: row;
+        align-items: center;
+        
+    }
+
+    .highlight .text-content {
+        order: 2; /* Manda o texto para a segunda posição */
+        padding: 0 40px;
+    }
+}
+
+/* Passo 4: Rodapé Completo */
+footer {
+    background-color: #222;
+    color: #fff;
+    /* Seu código para o rodapé aqui */
+    padding: 40px 20px;
+    text-align: center;
+    
+}
+
+.footer-columns {
+    /* Seu código para as colunas do rodapé aqui */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.contact, .links {
+    margin: 10px;
+    flex: 1; /* Permite que cresçam e ocupem o espaço */
+    min-width: 200px; /* Evita que fiquem muito espremidas */
+}
+
+.copyright {
+    flex-basis: 100%; /* Ocupa toda a largura, forçando a quebra de linha */
+    margin-top: 30px;
+}
