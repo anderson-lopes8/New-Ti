@@ -162,10 +162,10 @@ export const cidades: Cidade[] = [
 
       {
         id: 'pgrande-serra-mar',
-        nome: 'Parque Estadual Serra do Mar',
+        nome: 'Trilha da Cachoeira do Laranjal',
         categoria: 'Cultura e Natureza', // ajuste conforme as categorias definidas no seu tipo
         imagem: IMAGENS_ATRACOES['pgrande-serra-mar'],
-        endereco: endereco('Estrada do Rio Branco', 'S/N', 'Melvi', 'Praia Grande'),
+        endereco: endereco('Estrada do Rio Branco', 'S/N', 'Sítio do Campo', 'Praia Grande'),
         horarios: 'Terça a domingo, das 8h às 17h (visitas mediante agendamento)',
         historia:
           'Maior corredor biológico da Mata Atlântica no Brasil, o parque preserva encostas, nascentes e trilhas ecológicas em Praia Grande, oferecendo contato direto com a biodiversidade nativa e mirantes naturais da região.',
@@ -188,7 +188,7 @@ export const cidades: Cidade[] = [
         endereco: endereco('Av. Presidente Kennedy', 'S/N', 'Centro', 'Mongaguá'),
         horarios: 'Aberta 24 horas',
         historia:
-          'Praia tranquila de águas calmas, tradicionalmente frequêntada por famílias e pescadores artesanais.',
+          'Praia tranquila de águas calmas, tradicionalmente frequentada por famílias e pescadores artesanais.',
       },
       {
         id: 'mongagua-monumento-sao-pedro',

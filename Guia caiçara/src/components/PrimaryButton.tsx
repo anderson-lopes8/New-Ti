@@ -35,19 +35,7 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     shadowOffset: { width: 0, height: 6 },
   },
-
-  pressionado: {
-    opacity: 0.85,
-    transform: [{ scale: 0.98 }]
-  },
-
-  texto: {
-    color: COLORS.branco,
-    fontSize: 17,
-    fontWeight: '700'
-  },
-
-  icone: {
-    marginLeft: 10
-  },
+  pressionado: { opacity: 0.85, transform: [{ scale: 0.98 }] },
+  texto: { color: COLORS.branco, fontSize: 17, fontWeight: '700' },
+  icone: { marginLeft: 10 },
 });

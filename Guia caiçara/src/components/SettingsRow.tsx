@@ -43,20 +43,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.borda,
   },
-
-  icone: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 12
-  },
-
-  label: {
-    flex: 1,
-    fontSize: 15,
-    fontWeight: '600',
-    color: COLORS.texto
-  },
+  icone: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center', marginRight: 12 },
+  label: { flex: 1, fontSize: 15, fontWeight: '600', color: COLORS.texto },
 });

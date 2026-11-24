@@ -54,22 +54,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.borda,
   },
-  imagem: {
-    width: 110, height: 120
-  },
-
-  info: {
-    flex: 1,
-    padding: 12,
-    justifyContent: 'space-between'
-  },
-
-  topo: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-
+  imagem: { width: 110, height: 120 },
+  info: { flex: 1, padding: 12, justifyContent: 'space-between' },
+  topo: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   categoria: {
     fontSize: 11,
     fontWeight: '700',
@@ -78,30 +65,8 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 6,
   },
-
-  nome: {
-    fontSize: 15,
-    fontWeight: '700',
-    color: COLORS.texto,
-    marginTop: 4
-  },
-
-  linhaCidade: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4, marginTop: 4
-  },
-
-  cidade: {
-    fontSize: 12,
-    color: COLORS.textoSuave
-  },
-
-  verMais: {
-    fontSize: 13,
-    color: COLORS.azulMarinho,
-    fontWeight: '600',
-    marginTop: 6
-  },
-
+  nome: { fontSize: 15, fontWeight: '700', color: COLORS.texto, marginTop: 4 },
+  linhaCidade: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 4 },
+  cidade: { fontSize: 12, color: COLORS.textoSuave },
+  verMais: { fontSize: 13, color: COLORS.azulMarinho, fontWeight: '600', marginTop: 6 },
 });

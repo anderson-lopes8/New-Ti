@@ -34,38 +34,15 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     backgroundColor: COLORS.branco,
   },
-
-  image: {
-    height: 180,
-    justifyContent: 'flex-end'
-  },
-
-  imageRadius: {
-    borderRadius: 18
-  },
-
+  image: { height: 180, justifyContent: 'flex-end' },
+  imageRadius: { borderRadius: 18 },
   overlay: {
     backgroundColor: 'rgba(11, 79, 124, 0.45)',
     padding: 16,
     borderBottomLeftRadius: 18,
     borderBottomRightRadius: 18,
   },
-
-  nome: {
-    fontSize: 26,
-    fontWeight: '800',
-    color: COLORS.branco
-  },
-
-  slogan: {
-    fontSize: 14, color: '#EAF6FF',
-    marginTop: 2
-  },
-
-  total: {
-    fontSize: 12,
-    color: COLORS.amarelo,
-    marginTop: 6,
-    fontWeight: '700'
-  },
+  nome: { fontSize: 26, fontWeight: '800', color: COLORS.branco },
+  slogan: { fontSize: 14, color: '#EAF6FF', marginTop: 2 },
+  total: { fontSize: 12, color: COLORS.amarelo, marginTop: 6, fontWeight: '700' },
 });

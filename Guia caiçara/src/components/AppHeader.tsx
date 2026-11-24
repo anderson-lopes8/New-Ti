@@ -17,34 +17,9 @@ export default function AppHeader({ title, subtitle }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingTop: 12,
-    paddingBottom: 8
-  },
-
-  logo: {
-    width: 48,
-    height: 48,
-    marginRight: 12
-  },
-
-  textos: {
-    flex: 1
-  },
-
-  title: {
-    fontSize: 20,
-    fontWeight: '800',
-    color: COLORS.azulMarinho
-  },
-
-  subtitle: {
-    fontSize: 13,
-    color: COLORS.azulClaro,
-    fontWeight: '600',
-    letterSpacing: 1
-  },
+  container: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20, paddingTop: 12, paddingBottom: 8 },
+  logo: { width: 48, height: 48, marginRight: 12 },
+  textos: { flex: 1 },
+  title: { fontSize: 20, fontWeight: '800', color: COLORS.azulMarinho },
+  subtitle: { fontSize: 13, color: COLORS.azulClaro, fontWeight: '600', letterSpacing: 1 },
 });

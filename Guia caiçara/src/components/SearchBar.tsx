@@ -48,10 +48,5 @@ const styles = StyleSheet.create({
     borderColor: COLORS.borda,
     gap: 8,
   },
-
-  input: {
-     flex: 1,
-      fontSize: 15,
-       color: COLORS.texto 
-      },
+  input: { flex: 1, fontSize: 15, color: COLORS.texto },
 });

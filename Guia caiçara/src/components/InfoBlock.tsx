@@ -46,12 +46,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.borda,
   },
-  cabecalho: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 8
-  },
-
+  cabecalho: { flexDirection: 'row', alignItems: 'center', marginBottom: 8 },
   iconeWrapper: {
     width: 32,
     height: 32,
@@ -61,20 +56,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 10,
   },
-  titulo: {
-    flex: 1,
-    fontSize: 14,
-    fontWeight: '700',
-    color: COLORS.azulMarinho
-  },
-
-  texto: {
-    fontSize: 15,
-    color: COLORS.texto,
-    lineHeight: 22,
-    paddingLeft: 42
-  },
-
+  titulo: { flex: 1, fontSize: 14, fontWeight: '700', color: COLORS.azulMarinho },
+  texto: { fontSize: 15, color: COLORS.texto, lineHeight: 22, paddingLeft: 42 },
   botaoMapa: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -87,14 +70,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderRadius: 12,
   },
-
-  botaoPressionado: {
-    opacity: 0.85,
-    transform: [{ scale: 0.98 }]
-  },
-
-  botaoTexto: {
-    flex: 1, color: COLORS.branco,
-    fontSize: 15, fontWeight: '700'
-  },
+  botaoPressionado: { opacity: 0.85, transform: [{ scale: 0.98 }] },
+  botaoTexto: { flex: 1, color: COLORS.branco, fontSize: 15, fontWeight: '700' },
 });

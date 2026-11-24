@@ -45,48 +45,12 @@ export default function CidadeDetalheScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.areia
-  },
-
-  conteudo: {
-    paddingBottom: 30
-  },
-
-  vazio: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-
-  hero: {
-    height: 220,
-    justifyContent: 'flex-end',
-    marginBottom: 16
-  },
-
-  heroOverlay: {
-    backgroundColor: 'rgba(11, 79, 124, 0.5)',
-    padding: 20
-  },
-
-  heroTitulo: {
-    fontSize: 30,
-    fontWeight: '800', color: COLORS.branco
-  },
-
-  heroSlogan: {
-    fontSize: 15,
-    color: '#EAF6FF',
-    marginTop: 2
-  },
-
-  rodape: {
-    textAlign: 'center',
-    color: COLORS.textoSuave,
-    fontSize: 12,
-    marginTop: 4,
-    marginBottom: 10
-  },
+  container: { flex: 1, backgroundColor: COLORS.areia },
+  conteudo: { paddingBottom: 30 },
+  vazio: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  hero: { height: 220, justifyContent: 'flex-end', marginBottom: 16 },
+  heroOverlay: { backgroundColor: 'rgba(11, 79, 124, 0.5)', padding: 20 },
+  heroTitulo: { fontSize: 30, fontWeight: '800', color: COLORS.branco },
+  heroSlogan: { fontSize: 15, color: '#EAF6FF', marginTop: 2 },
+  rodape: { textAlign: 'center', color: COLORS.textoSuave, fontSize: 12, marginTop: 4, marginBottom: 10 },
 });
