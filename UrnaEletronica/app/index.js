@@ -20,7 +20,7 @@ const candidatos = {
   22: {
     nome: "Flavio Bolsonaro",
     partido: "PL",
-    foto: require("../assets/Flavio.jpeg"), // Ajustado o caminho relativo para sair da pasta 'app'
+    foto: require("../assets/Flavio.jpeg"),
   },
 };
 
@@ -29,7 +29,6 @@ export default function UrnaScreen() {
   const [numero, setNumero] = useState("");
   const [etapa, setEtapa] = useState("DIGITANDO"); // DIGITANDO, VOTAR, CONFIRMAR
 
-  // CORRIGIDO: de CANDIDATOS para candidatos
   const candidato = candidatos[numero];
 
   const pressionarBotao = (digito) => {
@@ -182,6 +181,7 @@ const styles = StyleSheet.create({
     padding: 20,
     justifyContent: "center",
   },
+
   telaUrna: {
     backgroundColor: "#fff",
     borderWidth: 2,
@@ -191,6 +191,7 @@ const styles = StyleSheet.create({
     height: 220,
     justifyContent: "center",
   },
+
   infoVoto: { flex: 1 },
   tituloTela: {
     fontSize: 12,
@@ -216,6 +217,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#000",
   },
+
   detalhesCandidato: {
     marginLeft: 15,
     justifyContent: "center"
@@ -237,8 +239,18 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 20,
   },
-  telaInstrucao: { fontSize: 16, textAlign: "center", color: "#444" },
-  containerAcoes: { height: 60, marginVertical: 15, justifyContent: "center" },
+  telaInstrucao: {
+    fontSize: 16,
+    textAlign: "center",
+    color: "#444"
+  },
+
+  containerAcoes: {
+    height: 60,
+    marginVertical: 15,
+    justifyContent: "center"
+  },
+
   btnVotar: {
     backgroundColor: "#0056b3",
     padding: 12,
@@ -251,14 +263,24 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems: "center",
   },
-  btnTexto: { color: "#fff", fontWeight: "bold", fontSize: 16 },
+  btnTexto: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16
+  },
+
   teclado: {
     backgroundColor: "#222",
     padding: 15,
     borderRadius: 8,
     alignItems: "center",
   },
-  linhaTeclado: { flexDirection: "row", marginBottom: 10 },
+  
+  linhaTeclado: {
+    flexDirection: "row",
+    marginBottom: 10
+  },
+
   botaoNumero: {
     backgroundColor: "#111",
     width: 60,
@@ -269,7 +291,13 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     elevation: 2,
   },
-  textoBotaoNumero: { color: "#fff", fontSize: 20, fontWeight: "bold" },
+
+  textoBotaoNumero: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold"
+  },
+
   linhaTecladoComando: {
     flexDirection: "row",
     marginTop: 10,
@@ -277,6 +305,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 5,
   },
+
   btnComando: {
     paddingVertical: 12,
     paddingHorizontal: 20,
@@ -284,8 +313,25 @@ const styles = StyleSheet.create({
     minWidth: 110,
     alignItems: "center",
   },
-  btnBranco: { backgroundColor: "#fff", borderWidth: 1, borderColor: "#ccc" },
-  btnVerde: { backgroundColor: "#388e3c" },
-  textoComandoEscuro: { color: "#000", fontWeight: "bold", fontSize: 12 },
-  textoComando: { color: "#fff", fontWeight: "bold", fontSize: 12 },
+  btnBranco: {
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderColor: "#ccc"
+  },
+
+  btnVerde: {
+    backgroundColor: "#388e3c"
+  },
+
+  textoComandoEscuro: {
+    color: "#000",
+    fontWeight: "bold",
+    fontSize: 12
+  },
+
+  textoComando: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 12
+  },
 });

@@ -62,7 +62,7 @@ export default function ResultadoScreen() {
           <Text style={styles.votoDestaque}>{votos["13"]}</Text> votos
         </Text>
         <Text style={styles.itemPlacar}>
-          Candidato 2 (Número 22):{" "}
+          Flavio Bolsonaro (Número 22):{" "}
           <Text style={styles.votoDestaque}>{votos["22"]}</Text> votos
         </Text>
         <Text style={styles.itemPlacar}>
@@ -97,7 +97,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     justifyContent: "space-between",
   },
-  center: { flex: 1, justifyContent: "center", alignItems: "center" },
+
+  center: { flex: 1, 
+    justifyContent: "center",
+     alignItems: "center"
+     },
+
   titulo: {
     fontSize: 24,
     fontWeight: "bold",
@@ -105,6 +110,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20,
   },
+
   painelPlacar: {
     backgroundColor: "#f5f5f5",
     padding: 20,
@@ -112,8 +118,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#e0e0e0",
   },
-  itemPlacar: { fontSize: 18, marginBottom: 12 },
-  votoDestaque: { fontWeight: "bold", color: "#1b5e20" },
+
+  itemPlacar: { 
+    fontSize: 18,
+     marginBottom: 12
+     },
+
+  votoDestaque: { 
+    fontWeight: "bold",
+     color: "#1b5e20" 
+    },
+
   itemTotal: {
     fontSize: 16,
     marginTop: 10,
@@ -122,6 +137,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontStyle: "italic",
   },
+
   resultadoFinal: {
     fontSize: 22,
     fontWeight: "bold",
@@ -129,5 +145,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginVertical: 20,
   },
-  botoes: { marginBottom: 20 },
+  botoes: {
+     marginBottom: 20
+     },
 });
