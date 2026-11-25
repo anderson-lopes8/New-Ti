@@ -58,19 +58,20 @@ export default function ResultadoScreen() {
 
       <View style={styles.painelPlacar}>
         <Text style={styles.itemPlacar}>
-          Lula (Número 13):{" "}
+          <Text style={{ fontWeight: "bold" }}>Lula</Text> (Número 13):{" "}
           <Text style={styles.votoDestaque}>{votos["13"]}</Text> votos
         </Text>
         <Text style={styles.itemPlacar}>
-          Flavio Bolsonaro (Número 22):{" "}
+          <Text style={{ fontWeight: "bold" }}>Flávio Bolsonaro</Text> (Número 22):{" "}
           <Text style={styles.votoDestaque}>{votos["22"]}</Text> votos
         </Text>
         <Text style={styles.itemPlacar}>
-          Votos Nulos/Outros: {votos["nulos"]}
+          <Text style={{ fontWeight: "bold" }}>Votos Nulos/Outros:</Text>{" "}
+          {votos["nulos"]}
         </Text>
         <Text style={styles.itemTotal}>Total de votos computados: {total}</Text>
       </View>
-
+      
       <Text style={styles.resultadoFinal}>{ganhador()}</Text>
 
       <View style={styles.botoes}>
@@ -97,12 +98,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     justifyContent: "space-between",
   },
-
-  center: { flex: 1, 
-    justifyContent: "center",
-     alignItems: "center"
-     },
-
+  center: { flex: 1, justifyContent: "center", alignItems: "center" },
   titulo: {
     fontSize: 24,
     fontWeight: "bold",
@@ -110,7 +106,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20,
   },
-
   painelPlacar: {
     backgroundColor: "#f5f5f5",
     padding: 20,
@@ -118,17 +113,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#e0e0e0",
   },
-
-  itemPlacar: { 
-    fontSize: 18,
-     marginBottom: 12
-     },
-
-  votoDestaque: { 
-    fontWeight: "bold",
-     color: "#1b5e20" 
-    },
-
+  itemPlacar: { fontSize: 18, marginBottom: 12 },
+  votoDestaque: { fontWeight: "bold", color: "#1b5e20" },
   itemTotal: {
     fontSize: 16,
     marginTop: 10,
@@ -137,7 +123,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontStyle: "italic",
   },
-
   resultadoFinal: {
     fontSize: 22,
     fontWeight: "bold",
@@ -145,7 +130,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginVertical: 20,
   },
-  botoes: {
-     marginBottom: 20
-     },
+  botoes: { marginBottom: 20 },
 });
