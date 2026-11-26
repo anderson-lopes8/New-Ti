@@ -1,0 +1,180 @@
+
+import { StyleSheet, Text, SafeAreaView, View, TextInput, Switch, Alert } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { Button } from '../../components/button/button'
+import { router, Stack, useLocalSearchParams } from 'expo-router';
+import { Lembrete } from '../../types/lembrete';
+import { getLembreteById, getLembreteByIdByAPI } from '../../service/lembrete'
+import { lembreteDados } from '../../data/lembretesDados';
+import { removerLembrete, atualizarLembrete } from '../../service/lembrete';
+
+export default function LembreteEditScreen() {
+   
+    const { id } = useLocalSearchParams();
+    // Acima, pegando o que vem como parametro usando o hook useLocalSearchParams = pode pegar um ou um array
+    const idLembrete = parseInt(id as string);
+    // Acima como virá sempre um único e não um array temos que dizer que quermos pegar como uma string
+   
+    const [lembrete, setLembrete] = useState<Lembrete>();
+    const [titulo, setTitulo] = useState<string>('');
+    const [corpo, setCorpo] = useState<string>('');
+    const [status, setStatus] = useState<boolean>(false);
+ 
+    useEffect(() => {
+        async function getLembreteById(idLembrete:number){
+            if (idLembrete)
+            {
+            const dadosLembrete = await getLembreteByIdByAPI(idLembrete);
+            //tratamento ao lembrete transformando o 0 e 1 que vem da api em true ou false
+            dadosLembrete.StatusLembrete=dadosLembrete.StatusLembrete.toString()==='0'?false:true;
+            setLembrete(dadosLembrete);
+            }
+        }            
+        getLembreteById(idLembrete);
+    }, [idLembrete]);
+ 
+    useEffect(() => {
+        if (lembrete) {
+        setTitulo(lembrete.TituloLembrete || '');
+        setCorpo(lembrete.CorpoLembrete || '');
+        setStatus(lembrete.StatusLembrete || false);
+        }        
+    }, [lembrete]);
+ 
+    //Lembrete Save
+        async function handleLembreteSave() {
+            console.log(titulo + " " + corpo + " " + status?.toString());  
+            try {
+                const novoLembrete:Lembrete= {  
+                    "LembreteId":idLembrete,        
+                    "TituloLembrete":titulo,
+                    "CorpoLembrete":corpo,
+                    "StatusLembrete":status,
+                };
+                console.log(novoLembrete);
+                await atualizarLembrete(novoLembrete);
+                Alert.alert('Sucesso', 'Lembrete salvo com sucesso!');
+                router.replace('/../(home)/list');
+            } catch (error) {
+                console.log(error);
+                Alert.alert('Erro', 'Não foi possível salvar o lembrete.');
+            }
+        };
+ 
+         async function handleLembreRemove() {
+            try {
+                await removerLembrete(idLembrete);
+                Alert.alert('Sucesso', 'Lembrete removido com sucesso!');
+                router.replace('/../(home)/list');
+            } catch (error) {
+                console.log(error);
+                Alert.alert('Erro', 'Não foi possível remover o lembrete.');
+            }
+        };
+ 
+ 
+    return (
+        <View style={styles.container}>
+            <Stack.Screen options={{ title: lembrete?.TituloLembrete }} />
+            <View style={styles.lembreteArea}>
+ 
+                <View style={styles.detailsArea}>
+ 
+                    <Text style={styles.title}>Título</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={setTitulo}
+                        value={titulo}
+                        textAlign='center'
+                    />
+                    <Text style={styles.description}>Descrição</Text>
+                    <TextInput
+                        editable={true}
+                        multiline={true}
+                        numberOfLines={6}
+                        maxLength={60}
+                        // onChangeText={text => onChangeText(text)}
+                        onChangeText={setCorpo}
+                        value={corpo}
+                        style={styles.input}
+                    />
+                    <View style={styles.switchArea}>
+                        <Text>Não Concluída</Text>
+                        <Switch
+                            trackColor={{ false: '#767577', true: '#81b0ff' }}
+                            value={status}
+                            onValueChange={setStatus}
+                        // thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+                        // ios_backgroundColor="#3e3e3e"                        
+                        // value={isEnabled}
+                        />
+                        <Text>Concluída</Text>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.buttonArea}>
+                <Button title="Salvar" onPress={handleLembreteSave} />
+                <Button title="Excluir" onPress={handleLembreRemove} />
+            </View>
+        </View>
+    )
+}
+
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#ffe0f5"
+    },
+    lembreteArea: {
+        flex: 1,
+        padding: 20,
+        marginTop: 64
+    },
+    buttonArea: {
+        padding: 20,
+        flexDirection: "row",
+        gap: 32,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingBottom: 64
+    },
+    switchArea: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 32
+    },
+    detailsArea: {
+        width: "100%",
+        justifyContent: 'center',
+        alignItems: "center",
+        color: "#E67A31",
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: "#e74281",
+        borderRadius: 10,
+        padding: 20,
+        gap: 16,
+        backgroundColor: "#fff"
+    },
+    title: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        color: "#e74281"
+    },
+    description: {
+        fontSize: 20
+    },
+
+    input: {
+        width: "100%",
+        margin: 12,
+        borderWidth: 1,
+        padding: 6
+    }
+})
+
+
+
