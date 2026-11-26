@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS roteiro_caicara
   DEFAULT CHARACTER SET utf8mb4
   DEFAULT COLLATE utf8mb4_unicode_ci;
  
-USE roteiro_caicara
+
  
 DROP TABLE IF EXISTS favoritos;
 DROP TABLE IF EXISTS usuarios;
@@ -33,12 +33,13 @@ CREATE TABLE IF NOT EXISTS recuperacao_senha (
   email VARCHAR(150) NOT NULL,
   codigo VARCHAR(6) NOT NULL,
   expira_em DATETIME NOT NULL,
+
   usado TINYINT(1) DEFAULT 0,
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
-SELECT * FROM usuarios
-SELECT * FROM favoritos
+SELECT * FROM usuarios;
+SELECT * FROM favoritos;
 
 ALTER TABLE usuarios MODIFY COLUMN email VARCHAR(150) NULL UNIQUE;
 ALTER TABLE usuarios
